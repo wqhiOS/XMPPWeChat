@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AccountTool.h"
+#import "XMPPHandle.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+        
+    AccountModel *account = [AccountTool account];
+    if (account.login == YES) {
+        self.window.rootViewController = [UIStoryboard initialVCWithName:@"Main"];
+        [[XMPPHandle sharedXMPPHandle] xmppLoginWith:account result:nil];
+    }
+    
     return YES;
 }
 

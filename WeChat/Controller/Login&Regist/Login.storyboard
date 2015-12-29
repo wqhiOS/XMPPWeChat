@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CGE-Mh-zAb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--登陆-->
+        <scene sceneID="hJR-aQ-cGm">
+            <objects>
+                <viewController id="At2-jp-czM" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TrN-2h-6Cx"/>
+                        <viewControllerLayoutGuide type="bottom" id="7mU-aY-3ZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nHc-52-8LW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT9-ay-Nea">
+                                <rect key="frame" x="150" y="81" width="300" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-YZ-Wds">
+                                        <rect key="frame" x="29" y="28" width="243" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-o9-HXE">
+                                        <rect key="frame" x="28" y="79" width="243" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTC-vY-Tc0">
+                                        <rect key="frame" x="134" y="135" width="30" height="30"/>
+                                        <state key="normal" title="登陆"/>
+                                        <connections>
+                                            <action selector="loginBtnClick:" destination="At2-jp-czM" eventType="touchUpInside" id="AbE-EN-Ak8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8nS-cW-oFX"/>
+                                    <constraint firstAttribute="height" constant="300" id="Owf-xa-Hd8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yT9-ay-Nea" firstAttribute="centerX" secondItem="nHc-52-8LW" secondAttribute="centerX" id="Ybc-fQ-FKV"/>
+                            <constraint firstItem="yT9-ay-Nea" firstAttribute="top" secondItem="TrN-2h-6Cx" secondAttribute="bottom" constant="17" id="lbT-Qx-L1B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="登陆" id="7Qp-dH-vgc"/>
+                    <connections>
+                        <outlet property="pwdField" destination="Z1u-o9-HXE" id="BhE-hv-jpB"/>
+                        <outlet property="userField" destination="Msf-YZ-Wds" id="5RD-Hr-Mxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwt-El-I0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="397"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g5P-z9-89o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CGE-Mh-zAb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lpM-lZ-eGK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="At2-jp-czM" kind="relationship" relationship="rootViewController" id="v8Q-MS-3U5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43c-Md-1bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="397"/>
+        </scene>
+    </scenes>
+</document>

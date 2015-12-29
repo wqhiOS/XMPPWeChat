@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		579CEC581C3235E000B88BE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEC571C3235E000B88BE0 /* main.m */; };
 		579CEC5B1C3235E000B88BE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEC5A1C3235E000B88BE0 /* AppDelegate.m */; };
-		579CEC5E1C3235E000B88BE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEC5D1C3235E000B88BE0 /* ViewController.m */; };
 		579CEC611C3235E000B88BE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579CEC5F1C3235E000B88BE0 /* Main.storyboard */; };
 		579CEC631C3235E000B88BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579CEC621C3235E000B88BE0 /* Assets.xcassets */; };
 		579CEC661C3235E000B88BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579CEC641C3235E000B88BE0 /* LaunchScreen.storyboard */; };
@@ -159,6 +158,15 @@
 		579CEE8D1C323C1600B88BE0 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CEE7C1C323C1600B88BE0 /* libidn.a */; };
 		579CEE901C323C5400B88BE0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CEE8F1C323C5400B88BE0 /* libxml2.tbd */; };
 		579CEE921C324C4F00B88BE0 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 579CEE911C324C4F00B88BE0 /* libresolv.tbd */; };
+		579CEE971C324D3500B88BE0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEE961C324D3500B88BE0 /* BaseViewController.m */; };
+		579CEE9A1C324D3F00B88BE0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEE991C324D3F00B88BE0 /* LoginViewController.m */; };
+		579CEE9C1C324D5C00B88BE0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579CEE9B1C324D5C00B88BE0 /* Login.storyboard */; };
+		579CEEA21C324F4C00B88BE0 /* XMPPHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEA11C324F4C00B88BE0 /* XMPPHandle.m */; };
+		579CEEA81C3254A700B88BE0 /* UIStoryboard+VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEA71C3254A700B88BE0 /* UIStoryboard+VC.m */; };
+		579CEEB21C32568E00B88BE0 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEB11C32568E00B88BE0 /* MeViewController.m */; };
+		579CEEB51C32581A00B88BE0 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEB41C32581A00B88BE0 /* BaseModel.m */; };
+		579CEEB81C32582A00B88BE0 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEB71C32582A00B88BE0 /* AccountModel.m */; };
+		579CEEBC1C32745800B88BE0 /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 579CEEBB1C32745800B88BE0 /* AccountTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,8 +191,6 @@
 		579CEC571C3235E000B88BE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		579CEC591C3235E000B88BE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		579CEC5A1C3235E000B88BE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		579CEC5C1C3235E000B88BE0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		579CEC5D1C3235E000B88BE0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		579CEC601C3235E000B88BE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		579CEC621C3235E000B88BE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		579CEC651C3235E000B88BE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -492,6 +498,25 @@
 		579CEE8E1C323C2000B88BE0 /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
 		579CEE8F1C323C5400B88BE0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		579CEE911C324C4F00B88BE0 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		579CEE951C324D3500B88BE0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		579CEE961C324D3500B88BE0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		579CEE981C324D3F00B88BE0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		579CEE991C324D3F00B88BE0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		579CEE9B1C324D5C00B88BE0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		579CEE9E1C324E6100B88BE0 /* WeChat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChat_Prefix.pch; sourceTree = "<group>"; };
+		579CEEA01C324F4C00B88BE0 /* XMPPHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPHandle.h; sourceTree = "<group>"; };
+		579CEEA11C324F4C00B88BE0 /* XMPPHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPHandle.m; sourceTree = "<group>"; };
+		579CEEA41C32510400B88BE0 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		579CEEA61C3254A700B88BE0 /* UIStoryboard+VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+VC.h"; sourceTree = "<group>"; };
+		579CEEA71C3254A700B88BE0 /* UIStoryboard+VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+VC.m"; sourceTree = "<group>"; };
+		579CEEB01C32568E00B88BE0 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		579CEEB11C32568E00B88BE0 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		579CEEB31C32581A00B88BE0 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		579CEEB41C32581A00B88BE0 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		579CEEB61C32582A00B88BE0 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
+		579CEEB71C32582A00B88BE0 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
+		579CEEBA1C32745800B88BE0 /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
+		579CEEBB1C32745800B88BE0 /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -547,15 +572,14 @@
 		579CEC551C3235E000B88BE0 /* WeChat */ = {
 			isa = PBXGroup;
 			children = (
-				579CEC891C3237AC00B88BE0 /* Controller */,
-				579CEC8B1C3237AC00B88BE0 /* Model */,
-				579CEC8C1C3237AC00B88BE0 /* View */,
-				579CEC8A1C3237AC00B88BE0 /* Lib */,
 				579CEC591C3235E000B88BE0 /* AppDelegate.h */,
 				579CEC5A1C3235E000B88BE0 /* AppDelegate.m */,
-				579CEC5C1C3235E000B88BE0 /* ViewController.h */,
-				579CEC5D1C3235E000B88BE0 /* ViewController.m */,
-				579CEC5F1C3235E000B88BE0 /* Main.storyboard */,
+				579CEC891C3237AC00B88BE0 /* Controller */,
+				579CEC8C1C3237AC00B88BE0 /* View */,
+				579CEC8B1C3237AC00B88BE0 /* Model */,
+				579CEEA31C324F7F00B88BE0 /* Tools */,
+				579CEE9F1C324F0400B88BE0 /* Handle */,
+				579CEC8A1C3237AC00B88BE0 /* Lib */,
 				579CEC561C3235E000B88BE0 /* Supporting Files */,
 			);
 			path = WeChat;
@@ -568,6 +592,7 @@
 				579CEC621C3235E000B88BE0 /* Assets.xcassets */,
 				579CEC671C3235E000B88BE0 /* Info.plist */,
 				579CEC571C3235E000B88BE0 /* main.m */,
+				579CEE9E1C324E6100B88BE0 /* WeChat_Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -593,6 +618,10 @@
 		579CEC891C3237AC00B88BE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				579CEC5F1C3235E000B88BE0 /* Main.storyboard */,
+				579CEE941C324D2D00B88BE0 /* Base */,
+				579CEE931C324D0600B88BE0 /* Login&Regist */,
+				579CEEA91C3255BC00B88BE0 /* Me */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -608,6 +637,10 @@
 		579CEC8B1C3237AC00B88BE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				579CEEB31C32581A00B88BE0 /* BaseModel.h */,
+				579CEEB41C32581A00B88BE0 /* BaseModel.m */,
+				579CEEB61C32582A00B88BE0 /* AccountModel.h */,
+				579CEEB71C32582A00B88BE0 /* AccountModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1497,6 +1530,71 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
+		579CEE931C324D0600B88BE0 /* Login&Regist */ = {
+			isa = PBXGroup;
+			children = (
+				579CEE9B1C324D5C00B88BE0 /* Login.storyboard */,
+				579CEE981C324D3F00B88BE0 /* LoginViewController.h */,
+				579CEE991C324D3F00B88BE0 /* LoginViewController.m */,
+			);
+			path = "Login&Regist";
+			sourceTree = "<group>";
+		};
+		579CEE941C324D2D00B88BE0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				579CEE951C324D3500B88BE0 /* BaseViewController.h */,
+				579CEE961C324D3500B88BE0 /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		579CEE9F1C324F0400B88BE0 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				579CEEA01C324F4C00B88BE0 /* XMPPHandle.h */,
+				579CEEA11C324F4C00B88BE0 /* XMPPHandle.m */,
+			);
+			name = Handle;
+			sourceTree = "<group>";
+		};
+		579CEEA31C324F7F00B88BE0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				579CEEB91C32744700B88BE0 /* AccountTool */,
+				579CEEA41C32510400B88BE0 /* Singleton.h */,
+				579CEEA51C32548D00B88BE0 /* Category */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		579CEEA51C32548D00B88BE0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				579CEEA61C3254A700B88BE0 /* UIStoryboard+VC.h */,
+				579CEEA71C3254A700B88BE0 /* UIStoryboard+VC.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		579CEEA91C3255BC00B88BE0 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				579CEEB01C32568E00B88BE0 /* MeViewController.h */,
+				579CEEB11C32568E00B88BE0 /* MeViewController.m */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		579CEEB91C32744700B88BE0 /* AccountTool */ = {
+			isa = PBXGroup;
+			children = (
+				579CEEBA1C32745800B88BE0 /* AccountTool.h */,
+				579CEEBB1C32745800B88BE0 /* AccountTool.m */,
+			);
+			name = AccountTool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1602,6 +1700,7 @@
 			files = (
 				579CEE8C1C323C1600B88BE0 /* build-libidn.sh in Resources */,
 				579CEC661C3235E000B88BE0 /* LaunchScreen.storyboard in Resources */,
+				579CEE9C1C324D5C00B88BE0 /* Login.storyboard in Resources */,
 				579CEC631C3235E000B88BE0 /* Assets.xcassets in Resources */,
 				579CEE871C323C1600B88BE0 /* README.txt in Resources */,
 				579CEC611C3235E000B88BE0 /* Main.storyboard in Resources */,
@@ -1632,6 +1731,7 @@
 				579CEE111C323C0800B88BE0 /* XMPPIQ+XEP_0060.m in Sources */,
 				579CECD61C323C0400B88BE0 /* XMPPMessage.m in Sources */,
 				579CEDE21C323C0800B88BE0 /* XMPPProcessOne.m in Sources */,
+				579CEEB51C32581A00B88BE0 /* BaseModel.m in Sources */,
 				579CEE0C1C323C0800B88BE0 /* XMPPvCardTempLabel.m in Sources */,
 				579CEE1A1C323C0800B88BE0 /* XMPPSoftwareVersion.m in Sources */,
 				579CEE041C323C0800B88BE0 /* XMPPvCardCoreDataStorage.m in Sources */,
@@ -1656,14 +1756,16 @@
 				579CEE221C323C0800B88BE0 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				579CEE3E1C323C0800B88BE0 /* NSXMLElement+XEP_0335.m in Sources */,
 				579CEE021C323C0800B88BE0 /* XMPPvCard.xcdatamodeld in Sources */,
-				579CEC5E1C3235E000B88BE0 /* ViewController.m in Sources */,
 				579CECBA1C323C0000B88BE0 /* NSNumber+XMPP.m in Sources */,
 				579CEE8B1C323C1600B88BE0 /* DDXMLNode.m in Sources */,
 				579CECD91C323C0400B88BE0 /* XMPPPresence.m in Sources */,
+				579CEEB81C32582A00B88BE0 /* AccountModel.m in Sources */,
 				579CEE861C323C1600B88BE0 /* DDMultiFormatter.m in Sources */,
 				579CEC5B1C3235E000B88BE0 /* AppDelegate.m in Sources */,
+				579CEEA81C3254A700B88BE0 /* UIStoryboard+VC.m in Sources */,
 				579CEDF11C323C0800B88BE0 /* XMPPIQ+LastActivity.m in Sources */,
 				579CEE161C323C0800B88BE0 /* XMPPRegistration.m in Sources */,
+				579CEE971C324D3500B88BE0 /* BaseViewController.m in Sources */,
 				579CEE101C323C0800B88BE0 /* XMPPResultSet.m in Sources */,
 				579CEDE91C323C0800B88BE0 /* XMPPResourceMemoryStorageObject.m in Sources */,
 				579CEE4E1C323C0A00B88BE0 /* DDList.m in Sources */,
@@ -1706,6 +1808,7 @@
 				579CEE121C323C0800B88BE0 /* XMPPPubSub.m in Sources */,
 				579CEE7E1C323C1600B88BE0 /* GCDAsyncSocket.m in Sources */,
 				579CEE231C323C0800B88BE0 /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
+				579CEEA21C324F4C00B88BE0 /* XMPPHandle.m in Sources */,
 				579CEE2F1C323C0800B88BE0 /* XMPPStreamManagementStanzas.m in Sources */,
 				579CECAE1C323BFC00B88BE0 /* XMPPPlainAuthentication.m in Sources */,
 				579CECD41C323C0400B88BE0 /* XMPPIQ.m in Sources */,
@@ -1715,6 +1818,7 @@
 				579CECDA1C323C0400B88BE0 /* XMPPStream.m in Sources */,
 				579CEE141C323C0800B88BE0 /* XMPPIQ+XEP_0066.m in Sources */,
 				579CEDEF1C323C0800B88BE0 /* XMPPIQ+JabberRPCResonse.m in Sources */,
+				579CEEBC1C32745800B88BE0 /* AccountTool.m in Sources */,
 				579CEE0F1C323C0800B88BE0 /* NSXMLElement+XEP_0059.m in Sources */,
 				579CEE131C323C0800B88BE0 /* TURNSocket.m in Sources */,
 				579CECBB1C323C0000B88BE0 /* NSXMLElement+XMPP.m in Sources */,
@@ -1732,6 +1836,7 @@
 				579CEDF31C323C0800B88BE0 /* XMPPPrivacy.m in Sources */,
 				579CEE331C323C0800B88BE0 /* XMPPAutoTime.m in Sources */,
 				579CEDF61C323C0800B88BE0 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
+				579CEE9A1C324D3F00B88BE0 /* LoginViewController.m in Sources */,
 				579CEDED1C323C0800B88BE0 /* XMPPSystemInputActivityMonitor.m in Sources */,
 				579CEDF21C323C0800B88BE0 /* XMPPLastActivity.m in Sources */,
 				579CEE251C323C0800B88BE0 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
@@ -1739,6 +1844,7 @@
 				579CEE1F1C323C0800B88BE0 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				579CECB01C323BFC00B88BE0 /* XMPPXFacebookPlatformAuthentication.m in Sources */,
 				579CEE061C323C0800B88BE0 /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
+				579CEEB21C32568E00B88BE0 /* MeViewController.m in Sources */,
 				579CEDE61C323C0800B88BE0 /* XMPPRoster.xcdatamodel in Sources */,
 				579CEE211C323C0800B88BE0 /* XMPPCapabilities.m in Sources */,
 				579CEDEE1C323C0800B88BE0 /* XMPPIQ+JabberRPC.m in Sources */,
@@ -1812,6 +1918,7 @@
 				579CEC601C3235E000B88BE0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		579CEC641C3235E000B88BE0 /* LaunchScreen.storyboard */ = {
@@ -1912,6 +2019,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WeChat/WeChat_Prefix.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1931,6 +2040,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WeChat/WeChat_Prefix.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
