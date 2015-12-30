@@ -7,6 +7,8 @@
 //
 
 #import "MeViewController.h"
+#import "XMPPHandle.h"
+#import "AccountTool.h"
 
 @interface MeViewController ()
 
@@ -20,6 +22,12 @@
     self.title = @"我";
 }
 - (IBAction)logout:(id)sender {
+    
+    [[XMPPHandle sharedXMPPHandle] xmppLogout];
+    AccountModel *account = [AccountTool account];
+    account.login = NO;
+    [AccountTool saveAccount:account];
+    
     [UIStoryboard showInitialVCWithName:@"Login"];
 }
 

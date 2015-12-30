@@ -29,9 +29,12 @@ typedef void (^XMPPResultBlock)(XMPPResultType);
  */
 singleton_interface(XMPPHandle)
 
-//- (void)xmppLogin:(XMPPResultBlock)resultBlock;
 /**
  *  用户登陆
  */
 - (void)xmppLoginWith:(AccountModel *)accountModel result:(XMPPResultBlock)resultBlock;
+/**
+ *  注销
+ */
+- (void)xmppLogout;
 @end

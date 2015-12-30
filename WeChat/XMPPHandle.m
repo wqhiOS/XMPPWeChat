@@ -28,6 +28,11 @@ singleton_implementation(XMPPHandle)
     [self connectToHost];
 }
 
+- (void)xmppLogout {
+    [self sendOffline];
+    [self disconncetFromHost];
+}
+
 #pragma mark - private 
 - (void)connectToHost {
     self.xmppStream.myJID = [XMPPJID jidWithUser:_accountModel.user domain:@"wuqh.local" resource:@"iOS"];
@@ -53,6 +58,15 @@ singleton_implementation(XMPPHandle)
 - (void)sendOnline {
     XMPPPresence *presence = [XMPPPresence presence];
     [self.xmppStream sendElement:presence];
+}
+
+-(void)sendOffline{
+    XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavailable"];
+    [self.xmppStream sendElement:offline];
+}
+
+-(void)disconncetFromHost{
+    [self.xmppStream disconnect];
 }
 
 #pragma mark - getter 

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--登陆-->
@@ -20,21 +21,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT9-ay-Nea">
                                 <rect key="frame" x="150" y="81" width="300" height="300"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-YZ-Wds">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zhangsan" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-YZ-Wds">
                                         <rect key="frame" x="29" y="28" width="243" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-o9-HXE">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-o9-HXE">
                                         <rect key="frame" x="28" y="79" width="243" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTC-vY-Tc0">
-                                        <rect key="frame" x="134" y="135" width="30" height="30"/>
+                                        <rect key="frame" x="172" y="135" width="30" height="30"/>
                                         <state key="normal" title="登陆"/>
                                         <connections>
                                             <action selector="loginBtnClick:" destination="At2-jp-czM" eventType="touchUpInside" id="AbE-EN-Ak8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkV-wC-FGs">
+                                        <rect key="frame" x="81" y="135" width="30" height="30"/>
+                                        <state key="normal" title="注册"/>
+                                        <connections>
+                                            <segue destination="RnN-k6-ncu" kind="presentation" id="GIg-nu-cwO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,6 +69,64 @@
             </objects>
             <point key="canvasLocation" x="1142" y="397"/>
         </scene>
+        <!--注册-->
+        <scene sceneID="las-5x-2Vq">
+            <objects>
+                <viewController id="4V8-1Z-77e" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C8t-Fa-Jcv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Se7-nd-OiO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ttG-hf-QCD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iR6-6d-Ys9">
+                                <rect key="frame" x="20" y="94" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZZ-KT-p9b">
+                                <rect key="frame" x="20" y="149" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daO-ux-YHY">
+                                <rect key="frame" x="285" y="201" width="30" height="30"/>
+                                <state key="normal" title="注册"/>
+                                <connections>
+                                    <action selector="registerBtnClick:" destination="4V8-1Z-77e" eventType="touchUpInside" id="1Ws-I8-XcO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fZZ-KT-p9b" firstAttribute="trailing" secondItem="ttG-hf-QCD" secondAttribute="trailingMargin" id="0wa-Mm-XGt"/>
+                            <constraint firstItem="fZZ-KT-p9b" firstAttribute="top" secondItem="iR6-6d-Ys9" secondAttribute="bottom" constant="25" id="110-ol-hiK"/>
+                            <constraint firstItem="daO-ux-YHY" firstAttribute="centerX" secondItem="ttG-hf-QCD" secondAttribute="centerX" id="A2G-JF-3r5"/>
+                            <constraint firstItem="iR6-6d-Ys9" firstAttribute="leading" secondItem="ttG-hf-QCD" secondAttribute="leadingMargin" id="Ba6-ww-wmU"/>
+                            <constraint firstItem="iR6-6d-Ys9" firstAttribute="trailing" secondItem="ttG-hf-QCD" secondAttribute="trailingMargin" id="DQo-wa-Rzv"/>
+                            <constraint firstItem="fZZ-KT-p9b" firstAttribute="leading" secondItem="ttG-hf-QCD" secondAttribute="leadingMargin" id="rGL-0w-l9I"/>
+                            <constraint firstItem="daO-ux-YHY" firstAttribute="top" secondItem="fZZ-KT-p9b" secondAttribute="bottom" constant="22" id="ut5-vp-CMt"/>
+                            <constraint firstItem="iR6-6d-Ys9" firstAttribute="top" secondItem="C8t-Fa-Jcv" secondAttribute="bottom" constant="30" id="w57-5f-Twx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="注册" id="YFh-vP-NAM">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="ndZ-WE-rjy">
+                            <connections>
+                                <action selector="cancelRegister:" destination="4V8-1Z-77e" id="4MM-Xh-d76"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pwdField" destination="fZZ-KT-p9b" id="Abx-kS-9zR"/>
+                        <outlet property="userField" destination="iR6-6d-Ys9" id="2U1-Tk-wov"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-fu-QFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="397"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="g5P-z9-89o">
             <objects>
@@ -78,6 +144,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43c-Md-1bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="330" y="397"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bKZ-uv-iOj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RnN-k6-ncu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JE4-dW-7MS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4V8-1Z-77e" kind="relationship" relationship="rootViewController" id="cre-fN-RW3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwi-GN-PWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885" y="397"/>
         </scene>
     </scenes>
 </document>
