@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "XMPPHandle.h"
 
 @interface RegisterViewController ()
 
@@ -29,8 +30,16 @@
 - (IBAction)cancelRegister:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)registerBtnClick:(id)sender { 
-    
+- (IBAction)registerBtnClick:(id)sender {
+    AccountModel *account = [[AccountModel alloc] init];
+    account.user = self.userField.text ;
+    account.pwd = self.pwdField.text;
+    [XMPPHandle sharedXMPPHandle].registerOperation = YES;
+    [[XMPPHandle sharedXMPPHandle] xmppRegisterWith:account result:^(XMPPResultType resultType) {
+        if (resultType == XMPPResultTypeRegisterSuccess) {
+            NSLog(@"注册成功");
+        }
+    }];
 }
 
 /*

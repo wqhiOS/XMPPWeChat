@@ -11,8 +11,10 @@
 #import "AccountModel.h"
 
 typedef enum {
-    XMPPResultTypeLoginSucess,//登录成功
-    XMPPResultTypeLoginFailure//登录失败
+    XMPPResultTypeLoginSuccess,//登录成功
+    XMPPResultTypeLoginFailure,//登录失败
+    XMPPResultTypeRegisterSuccess,
+    XMPPResultTypeRegisterFailure
 }XMPPResultType;
 
 /**
@@ -22,6 +24,7 @@ typedef void (^XMPPResultBlock)(XMPPResultType);
 
 @interface XMPPHandle : NSObject
 
+@property (nonatomic, assign, getter=isRegisterOperation) BOOL registerOperation;
 @property (nonatomic, copy) XMPPResultBlock resultBlock;
 
 /**
@@ -33,6 +36,10 @@ singleton_interface(XMPPHandle)
  *  用户登陆
  */
 - (void)xmppLoginWith:(AccountModel *)accountModel result:(XMPPResultBlock)resultBlock;
+/**
+ *  用户注册
+ */
+- (void)xmppRegisterWith:(AccountModel *)accountModel result:(XMPPResultBlock)resultBlock;
 /**
  *  注销
  */

@@ -38,6 +38,7 @@
     _account = account;
 
     __weak typeof(self) weakSelf = self;
+    [XMPPHandle sharedXMPPHandle].registerOperation = NO;
     [[XMPPHandle sharedXMPPHandle] xmppLoginWith:account result:^(XMPPResultType resultType) {
         [weakSelf handleXMPPResultType:resultType];
     }];
@@ -47,7 +48,7 @@
 - (void)handleXMPPResultType:(XMPPResultType)resultType {
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        if (resultType  == XMPPResultTypeLoginSucess) {
+        if (resultType  == XMPPResultTypeLoginSuccess) {
             [UIStoryboard showInitialVCWithName:@"Main"];
             _account.login = YES;
             [AccountTool saveAccount:_account];

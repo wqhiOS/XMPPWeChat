@@ -23,6 +23,16 @@ singleton_implementation(XMPPHandle)
 
 #pragma mark - public
 - (void)xmppLoginWith:(AccountModel *)accountModel result:(XMPPResultBlock)resultBlock{
+    //不管怎样首先断开连接
+    [self.xmppStream disconnect];
+    
+    _accountModel = accountModel;
+    _resultBlock = resultBlock;
+    [self connectToHost];
+}
+
+- (void)xmppRegisterWith:(AccountModel *)accountModel result:(XMPPResultBlock)resultBlock {
+    [self.xmppStream disconnect]; 
     _accountModel = accountModel;
     _resultBlock = resultBlock;
     [self connectToHost];
@@ -35,6 +45,7 @@ singleton_implementation(XMPPHandle)
 
 #pragma mark - private 
 - (void)connectToHost {
+
     self.xmppStream.myJID = [XMPPJID jidWithUser:_accountModel.user domain:@"wuqh.local" resource:@"iOS"];
     self.xmppStream.hostName = @"127.0.0.1";
 //    self.xmppStream.hostPort = 5222;默认就是5222
@@ -82,7 +93,15 @@ singleton_implementation(XMPPHandle)
 #pragma mark 建立连接成功
 - (void)xmppStreamDidConnect:(XMPPStream *)sender {
     NSLog(@"%s",__func__);
-    [self sendPwdToHost];
+    if (self.isRegisterOperation) {
+        NSError *error = nil;
+        [self.xmppStream registerWithPassword:_accountModel.pwd error:&error];
+        if (error) {
+            NSLog(@"%@",error);
+        }
+    }else {
+        [self sendPwdToHost];
+    }
 }
 #pragma mark 与服务器断开连接
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error {
@@ -94,7 +113,7 @@ singleton_implementation(XMPPHandle)
     NSLog(@"%s",__func__) ;
     [self sendOnline];
     if (_resultBlock) {
-        _resultBlock(XMPPResultTypeLoginSucess);
+        _resultBlock(XMPPResultTypeLoginSuccess);
     }
 }
 #pragma mark 登陆失败
@@ -104,6 +123,22 @@ singleton_implementation(XMPPHandle)
         _resultBlock(XMPPResultTypeLoginFailure);
     }
 }
+#pragma mark 注册成功
+- (void)xmppStreamDidRegister:(XMPPStream *)sender {
+    NSLog(@"%s",__func__);
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeRegisterSuccess);
+    }
+}
+#pragma mark 注册失败
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error {
+    NSLog(@"%@",error);
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeRegisterFailure);
+    }
+}
+
+
 
 
 @end
